@@ -1,0 +1,14 @@
+title: Zihad Tarafdar
+email: zihad@bmpt.du.ac.bd
+description: Personal space for Zihad Tarafdar
+baseurl: ''
+url: ''
+twitter_username: xihad
+github_username: zihadt
+theme: minima
+collections:
+  projects:
+    output: true
+
+plugins:
+  - jekyll-feed
