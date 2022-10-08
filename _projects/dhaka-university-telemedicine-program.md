@@ -6,4 +6,5 @@ permalink: /projects/dutp/
 
 DUTP is a research project from the Dept. of Biomedical Physics & Technology.
 <br>
-<img src="/assets/images/dutp.png">
+
+{% include image-gallery.html folder="/assets/images" %}
