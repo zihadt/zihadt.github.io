@@ -4,7 +4,7 @@ title: Zihad Tarafdar
 description: ""
 
 baseurl: "" #name of GitHub repository
-url: "zihadt.github.io" #custom url to be used instead of GitHub repository
+url: "" #custom url to be used instead of GitHub repository
 email: zihad@bmpt.du.ac.bd
 
 # Pagination
@@ -48,7 +48,7 @@ collections:
     output: true
     permalink: /projects/:name/
     order:
-      - DhakaUniversityTelemedicineProgram.md
+      - dutp.md
       - ncvSystem.md
       - daq.md
 

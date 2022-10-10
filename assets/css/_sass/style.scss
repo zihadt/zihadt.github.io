@@ -28,7 +28,9 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: inherit;
 }
 
-
+p{
+  font-size: $small-font-size;
+}
 a {
   color: $brand-color;
   text-decoration: none;
