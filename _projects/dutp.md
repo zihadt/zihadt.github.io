@@ -12,11 +12,11 @@ During my Ph.D. studies, I conducted initial research to find the gaps in the ex
 <h3 id="app-ui"> Some screenshots of telemedicine web app UI </h3>
 The app UI supports both English and Bangla language. Bangla is set as the default language for UI.
 <h4>Rural Operator Panel</h4>
-{% include image-gallery.html folder="/assets/images/dutp/user-interface/operator" %}
+{% include image-gallery.html folder="/assets/images/dutp/interface/operator" %}
 <h4>Doctor Panel</h4>
-{% include image-gallery.html folder="/assets/images/dutp/user-interface/doctor" %}
+{% include image-gallery.html folder="/assets/images/dutp/interface/doctor" %}
 <h4>Admin Panel</h4>
-{% include image-gallery.html folder="/assets/images/dutp/user-interface/admin" %}
+{% include image-gallery.html folder="/assets/images/dutp/interface/admin" %}
 <h3 id="ecg-integration"> 12-lead ECG Device Integration with telemedicine system </h3>
 {% include image-gallery.html folder="/assets/images/dutp/ecg" %}
 <h3 id="stethoscope-integration"> Digital Stethoscope Integration with telemedicine system </h3>
