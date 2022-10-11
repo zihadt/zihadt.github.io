@@ -18,7 +18,7 @@ The app UI supports both English and Bangla language. Bangla is set as the defau
 <h5>Admin Panel</h5>
 {% include image-gallery.html folder="/assets/images/dutp/interface/admin" %}
 <h3 id="mobile-web"> Some screenshots from Mobile Web app UI </h3>
-{% include image-gallery.html folder="/assets/images/dutp/mobile" %}
+{% include image-gallery.html folder="/assets/images/dutp/mob" %}
 <h3 id="ecg-integration"> 12-lead ECG Device Integration with telemedicine system </h3>
 {% include image-gallery.html folder="/assets/images/dutp/ecg" %}
 <h3 id="stethoscope-integration"> Digital Stethoscope Integration with telemedicine system </h3>
