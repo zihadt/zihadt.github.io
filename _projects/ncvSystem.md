@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NCV System
-description: Software development for NCV Measurement System
+description: C#, Embedded Systems, PIC18f2550
 ---
 
 I am currently leading a project of user software development for a diagnostic system called Nerve Conduction Velocity (NCV) measurement.

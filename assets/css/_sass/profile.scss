@@ -1,25 +1,23 @@
 /* Profile */
 .profile {
-    border-style: solid;
-    border-color: $light-gray;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    border-radius: 50%;
+  border-style: solid;
+  border-color: $light-gray;
+  margin: 1.5rem 1rem 1rem;
+  border-radius: 6px;
+  border-radius: 5%;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 // adjust tile sizes on smaller screens
 @include media-query($on-phone) {
-  @media screen and (max-width: $on-phone){
+  @media screen and (max-width: $on-phone) {
 
     .profile {
       width: 40%;

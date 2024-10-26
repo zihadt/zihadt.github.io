@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Dhaka University Telemedicine Program
-description: Software development of a robust telemedicine system
+title: DUTP
+description: PHP, Laravel, Mysql, Vue.js
 ---
 In my current role as a postdoctoral research fellow at the Department of BMPT, I am leading the rapid design, development, and deployment of a web-platform for an international award-winning telemedicine program named “Dhaka University Telemedicine Program (DUTP).” This telemedicine program aims to deliver primary health care remotely in rural areas of Bangladesh. While 70% of the population is in rural areas of Bangladesh, there is a lack of qualified medical doctors because of prevailing socio-economic disparities between the rural and urban areas. To address the shortage of doctors for the deprived majority, BMPT started research work and development in telemedicine in 2011. The research was primarily focused on the development of indigenous technology coupled with its dissemination to achieve a comprehensive approach to the solution. Initially, a basic telemedicine software with Electronic Health Record (EHR) and a few stand-alone online diagnostic devices like a stethoscope and ECG were developed. A field trial taken up during 2013-2015 demonstrated the initial success of the basic model. However, the telemedicine software was basic and would not be able to cater to the requirements envisioned for its further expansion. Addressing the existing limitations, I developed a completely redesigned web-based telemedicine system under the purview of my Ph.D. work and earned my doctoral degree (October 2018) for the thesis entitled as “Software Development for a Secure Telemedicine System for Slow Internet Connectivity”.
 

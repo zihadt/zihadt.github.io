@@ -110,14 +110,17 @@ blockquote {
 
 
 .headline, .post-headline {
-  font-size: 2em;
+  font-size: 1.2em;
   margin-bottom: -0.4em;
+  margin-top: .8em;
 
   @include media-query($on-palm) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
-
+.site-title{
+  font-size: 2em;
+}
 /* Pagination style in index/home page */
 .pagination {
   margin: 2em 0;

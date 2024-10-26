@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Data Acquisition Unit (DAQ)
-description: Software development for a DAQ System
+description: C# Desktop App 
 ---
 This is an ongoing project where I am upgrading software for a USB Data Acquisition Device (DAQ). The software is being developed using C# language.
 The DAQ unit is primarily intended for university students to learn the basics of host-to-device and device-to-host data communication via USB protocol. 
