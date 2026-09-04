@@ -1,0 +1,202 @@
+---
+import Base from '../layouts/Base.astro';
+import CvEntry from '../components/CvEntry.astro';
+import { summary, contact, experience, education, skills, researchgate } from '../data/cv';
+---
+
+<Base title="CV" description={summary}>
+  <div class="title">
+    <h1>Curriculum vitae</h1>
+    <button class="pdf" type="button" data-print>↓ download pdf</button>
+  </div>
+
+  <div class="summary">
+    <p>{summary}</p>
+    <p class="contact muted">
+      {contact.map((c) => (c.href ? <a href={c.href}>{c.label}</a> : <span>{c.label}</span>))}
+    </p>
+  </div>
+
+  <section class="section">
+    <h2 class="muted"><span aria-hidden="true">//</span> experience</h2>
+    <div class="entries">
+      {experience.map((entry) => <CvEntry entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="muted"><span aria-hidden="true">//</span> education</h2>
+    <div class="entries education">
+      {education.map((entry) => <CvEntry entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="muted"><span aria-hidden="true">//</span> skills</h2>
+    <dl class="skills">
+      {
+        skills.map((s) => (
+          <div>
+            <dt class="muted">{s.key}</dt>
+            <dd>"{s.value}"</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section class="section">
+    <h2 class="muted"><span aria-hidden="true">//</span> publications</h2>
+    <p class="pubs muted">
+      Papers on telemedicine and medical instrumentation are listed on{' '}
+      <a href={researchgate} rel="noopener" target="_blank">ResearchGate</a>.
+    </p>
+  </section>
+</Base>
+
+<script>
+  document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+</script>
+
+<style>
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .pdf {
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  .pdf:hover {
+    opacity: 0.7;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .summary > p:first-child {
+    text-wrap: pretty;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 13px;
+  }
+
+  .contact a {
+    text-decoration: none;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  h2 {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .entries.education {
+    gap: 24px;
+  }
+
+  .skills {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .skills > div {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+  }
+
+  dt {
+    width: 132px;
+    flex-shrink: 0;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--str);
+    line-height: 1.6;
+  }
+
+  .pubs {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .pubs a {
+    color: var(--fg);
+    text-decoration-color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .title {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .entries,
+    .entries.education {
+      gap: 24px;
+    }
+
+    .skills {
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .skills > div {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    dt {
+      width: auto;
+    }
+
+    .pubs {
+      font-size: 14px;
+    }
+  }
+
+  @media print {
+    .pdf {
+      display: none;
+    }
+  }
+</style>

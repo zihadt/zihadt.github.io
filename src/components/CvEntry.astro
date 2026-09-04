@@ -1,0 +1,116 @@
+---
+import type { Entry } from '../data/cv';
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="entry">
+  <p class="when muted">{entry.when}</p>
+  <div class="body">
+    <div class="head">
+      <h3>{entry.title}</h3>
+      {entry.where && <p class="where muted">{entry.where}</p>}
+    </div>
+    {
+      entry.points && (
+        <ul class="muted">
+          {entry.points.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .entry {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .when {
+    font-size: 13px;
+    width: 132px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    line-height: 1.6;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  h3 {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1.4;
+  }
+
+  .where {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  @media print {
+    .entry {
+      break-inside: avoid;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .entry {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .when {
+      font-size: 12px;
+      width: auto;
+      padding-top: 0;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    .where {
+      font-size: 13px;
+    }
+
+    ul {
+      font-size: 14px;
+    }
+  }
+</style>
