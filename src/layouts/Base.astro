@@ -8,9 +8,11 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  variant?: 'home' | 'page';
+  links?: boolean;
 }
 
-const { title, description = site.description } = Astro.props;
+const { title, description = site.description, variant = 'page', links = true } = Astro.props;
 const pageTitle = title ? `${title} · ${site.name}` : site.name;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -44,12 +46,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </script>
   </head>
   <body>
-    <div class="container">
-      <Header />
-      <main>
+    <div class:list={['container', variant]}>
+      <Header variant={variant} />
+      <main class="main">
         <slot />
       </main>
-      <Links />
+      {links && <Links rule={variant === 'page'} />}
     </div>
   </body>
 </html>

@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const intro =
+  'Software I built for medical devices and healthcare delivery during my time at the Department of Biomedical Physics & Technology, University of Dhaka.';
+---
+
+<Base title="Projects" description={intro}>
+  <div class="intro">
+    <h1>Projects</h1>
+    <p class="muted">{intro}</p>
+  </div>
+  <ul class="list" role="list">
+    {
+      projects.map((project) => (
+        <li>
+          <a class="title" href={`/projects/${project.id}/`}>
+            {project.data.title}
+          </a>
+          <p class="summary muted">{project.data.summary}</p>
+          <p class="stack">"{project.data.stack.join(', ')}"</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .intro p {
+    font-size: 15px;
+    text-wrap: pretty;
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .list li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .list li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .title {
+    font-size: 17px;
+    text-decoration-color: var(--accent);
+    align-self: flex-start;
+  }
+
+  .summary {
+    font-size: 15px;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+
+  .stack {
+    font-size: 13px;
+    color: var(--str);
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 24px;
+    }
+
+    .intro p,
+    .summary {
+      font-size: 14px;
+    }
+
+    .list li {
+      padding: 16px 0;
+    }
+  }
+</style>
