@@ -21,10 +21,10 @@ export const experience: Entry[] = [
     title: 'AI and Innovation Lead',
     where: 'Business Novelty Ltd. · Dhaka',
     points: [
-      'Lead the AI practice at Business Novelty, from identifying use cases with clients to shipping personalised AI tools into their enterprise applications.',
+      'Lead the AI practice at Business Novelty, from identifying use cases with clients to building tailored AI solutions.',
+      'Shipped a business-focused chatbot SaaS platform and an eKYC platform built on an ML-powered OCR engine and a face verification system. Currently leading a smart IVR system, a customer satisfaction (CSAT) platform, and an AI-powered claim settlement system.',
       'Own the cloud platform the AI products run on, including architecture, cost, and the team’s security practices.',
-      'Evaluate new models and tooling, and decide what the team adopts and what it drops.',
-      'Mentor junior developers and set the engineering standards for AI work across in-house projects.',
+      'Support the team and set the engineering standards across AI and product work.',
     ],
   },
   {
