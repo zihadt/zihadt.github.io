@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="404" description="Page not found.">
+  <div class="missing">
+    <h1>404</h1>
+    <p class="muted"><span aria-hidden="true">//</span> page not found</p>
+    <p><a href="/">← home</a></p>
+  </div>
+</Base>
+
+<style>
+  .missing {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .missing p {
+    font-size: 14px;
+  }
+
+  .missing a {
+    text-decoration: none;
+  }
+</style>
