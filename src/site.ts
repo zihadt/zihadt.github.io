@@ -11,7 +11,7 @@ export const site = {
 // so the header layout is final, and add the pages when their sections go live.
 export const nav = [
   { label: 'projects', href: '/projects/' },
-  { label: 'blog', href: '/blog/' },
+  // { label: 'blog', href: '/blog/' }, // enable when the blog section goes live
   { label: 'cv', href: '/cv/' },
 ];
 

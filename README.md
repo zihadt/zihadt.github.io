@@ -11,7 +11,6 @@ npm run check    # type-check .astro files
 ```
 
 Site-wide text, nav items, and profile links live in `src/site.ts`.
+Projects are markdown files in `src/content/projects/` with their images under
+`src/assets/projects/`. CV content is in `src/data/cv.ts`.
 The colour tokens for both themes are in `src/styles/global.css`.
-
-The remaining Jekyll files (`_layouts`, `_includes`, `_projects`, `assets`) are
-kept until the project pages are ported and will be removed after that.
