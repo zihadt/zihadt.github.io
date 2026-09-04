@@ -3,7 +3,7 @@ title: NCV measurement system
 summary: Host software and firmware for a nerve conduction velocity diagnostic device, from a Java prototype to a C# USB 2.0 system.
 stack: [c#, java, pic18f2550]
 org: University of Dhaka
-order: 2
+order: 3
 galleries:
   - heading: latest ui, c#
     folder: ncv/latest

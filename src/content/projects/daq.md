@@ -3,7 +3,7 @@ title: USB data acquisition unit
 summary: Desktop software for a teaching lab instrument that demonstrates host-to-device USB communication, sold by Bibeat Ltd.
 stack: [c#, usb]
 org: University of Dhaka · Bibeat Ltd.
-order: 3
+order: 4
 galleries:
   - heading: device and ui
     folder: daq
