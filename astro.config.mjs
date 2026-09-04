@@ -6,6 +6,9 @@ export default defineConfig({
   site: 'https://zitar.dev',
   trailingSlash: 'always',
   integrations: [sitemap()],
+  redirects: {
+    '/projects/ncvSystem': '/projects/ncv/',
+  },
   fonts: [
     {
       provider: fontProviders.fontsource(),

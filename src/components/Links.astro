@@ -1,8 +1,14 @@
 ---
 import { links } from '../site';
+
+interface Props {
+  rule?: boolean;
+}
+
+const { rule = false } = Astro.props;
 ---
 
-<footer class="links muted">
+<footer class:list={['links', 'muted', { rule }]}>
   {
     links.map((link) => (
       <a
@@ -24,6 +30,11 @@ import { links } from '../site';
     gap: 12px 20px;
     font-size: 13px;
     padding-top: 4px;
+  }
+
+  .links.rule {
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
   }
 
   .links a {
