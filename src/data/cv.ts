@@ -32,10 +32,9 @@ export const experience: Entry[] = [
     title: 'Senior Software Engineer',
     where: 'Business Novelty Ltd. · Dhaka',
     points: [
-      'Containerised every in-house and client project, moving them from monolithic deployments to Docker Swarm clusters.',
-      'Designed the CI/CD pipeline used across all in-house projects.',
-      'Re-provisioned the company’s entire managed cloud estate, cutting hosting costs by almost half.',
-      'Led the refactoring of several in-house projects to improve maintainability and prepare them for containerised deployment.',
+      'Researched and built an AI-powered compliance tool for Somru BioScience, a leading Canadian biotech, that reviews SOPs and drug development protocols against the ICH M10 guideline and internal procedures, running a line-by-line gap analysis and a document-aware chat over the study’s documents. Built in Python and FastAPI with pluggable LLM providers.',
+      'Led the refactoring of several legacy in-house projects so they could be maintained and deployed independently, and contributed to the Java Spring Boot products.',
+      'Owned the platform side too: containerised every project onto Docker Swarm, designed the shared CI/CD pipeline, and re-provisioned the company-managed cloud estate, cutting hosting costs by almost half.',
     ],
   },
   {

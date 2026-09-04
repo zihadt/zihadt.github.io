@@ -1,6 +1,6 @@
 export const site = {
   name: 'Zihad Tarafdar',
-  role: 'AI and innovation lead @ Business Novelty Ltd.',
+  role: 'jack of all trades, master of some',
   url: 'https://zitar.dev',
   description:
     'Zihad Tarafdar, AI and Innovation Lead at Business Novelty Ltd. AI tools, cloud infrastructure, and homegrown medical devices.',
