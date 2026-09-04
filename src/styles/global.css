@@ -147,3 +147,39 @@ img {
     gap: 32px;
   }
 }
+
+@media print {
+  :root,
+  :root[data-theme='dark'] {
+    --bg: #ffffff;
+    --fg: #222222;
+    --muted: #666666;
+    --line: #dddddd;
+    --accent: #222222;
+    --str: #444444;
+    color-scheme: light;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+    gap: 24px;
+  }
+
+  .main {
+    gap: 24px;
+  }
+
+  .container > header,
+  .container > footer {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
