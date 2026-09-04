@@ -1,9 +1,9 @@
 export const site = {
   name: 'Zihad Tarafdar',
-  role: 'senior software engineer @ Business Novelty Ltd.',
+  role: 'AI and innovation lead @ Business Novelty Ltd.',
   url: 'https://zitar.dev',
   description:
-    'Zihad Tarafdar, software engineer. AI tools, cloud infrastructure, and homegrown medical devices.',
+    'Zihad Tarafdar, AI and Innovation Lead at Business Novelty Ltd. AI tools, cloud infrastructure, and homegrown medical devices.',
   employer: { name: 'Business Novelty Ltd.', url: 'https://biznovelty.com/' },
 };
 
@@ -19,6 +19,5 @@ export const links = [
   { label: 'email', href: 'mailto:zihad@bmpt.du.ac.bd' },
   { label: 'github', href: 'https://github.com/zihadt' },
   { label: 'linkedin', href: 'https://www.linkedin.com/in/zihad-tarafdar' },
-  { label: 'stackoverflow', href: 'https://stackoverflow.com/users/644614/zihad' },
   { label: 'researchgate', href: 'https://www.researchgate.net/profile/Zihad-Tarafdar' },
 ];

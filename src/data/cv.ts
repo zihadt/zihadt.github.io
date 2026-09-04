@@ -6,7 +6,7 @@ export type Entry = {
 };
 
 export const summary =
-  'Senior software engineer working across full-stack development, DevOps and embedded systems, with a PhD in biomedical physics and technology. Currently building AI tools and cloud infrastructure at Business Novelty Ltd. Previously led software for the Dhaka University Telemedicine Programme and Bibeat Ltd.’s homegrown medical devices.';
+  'AI and Innovation Lead at Business Novelty Ltd., with a background across full-stack development, DevOps and embedded systems and a PhD in biomedical physics and technology. Currently leading the AI practice, from client use cases to shipped tools and the cloud platform behind them. Previously led software for the Dhaka University Telemedicine Programme and Bibeat Ltd.’s homegrown medical devices.';
 
 export const contact = [
   { label: 'Dhaka, Bangladesh' },
@@ -17,14 +17,25 @@ export const contact = [
 
 export const experience: Entry[] = [
   {
-    when: '2024 – present',
+    when: '2025 – present',
+    title: 'AI and Innovation Lead',
+    where: 'Business Novelty Ltd. · Dhaka',
+    points: [
+      'Lead the AI practice at Business Novelty, from identifying use cases with clients to shipping personalised AI tools into their enterprise applications.',
+      'Own the cloud platform the AI products run on, including architecture, cost, and the team’s security practices.',
+      'Evaluate new models and tooling, and decide what the team adopts and what it drops.',
+      'Mentor junior developers and set the engineering standards for AI work across in-house projects.',
+    ],
+  },
+  {
+    when: '2024 – 2025',
     title: 'Senior Software Engineer',
     where: 'Business Novelty Ltd. · Dhaka',
     points: [
-      'Lead the development of personalised AI tools for enterprise applications.',
-      'Designed the CI/CD pipeline for all in-house projects and moved deployments to Docker Swarm clusters.',
-      'Re-provisioned cloud servers, cutting costs by 50%, and set cloud security practices for the team.',
-      'Mentor junior developers and contribute to in-house Java Spring Boot projects.',
+      'Containerised every in-house and client project, moving them from monolithic deployments to Docker Swarm clusters.',
+      'Designed the CI/CD pipeline used across all in-house projects.',
+      'Re-provisioned the company’s entire managed cloud estate, cutting hosting costs by almost half.',
+      'Led the refactoring of several in-house projects to improve maintainability and prepare them for containerised deployment.',
     ],
   },
   {
