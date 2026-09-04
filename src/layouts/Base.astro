@@ -51,7 +51,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <main class="main">
         <slot />
       </main>
-      {links && <Links rule={variant === 'page'} />}
+      <Links rule={variant === 'page'} links={links} />
     </div>
   </body>
 </html>

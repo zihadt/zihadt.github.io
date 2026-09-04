@@ -1,40 +1,60 @@
 ---
 import { links } from '../site';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   rule?: boolean;
+  links?: boolean;
 }
 
-const { rule = false } = Astro.props;
+const { rule = false, links: showLinks = true } = Astro.props;
 ---
 
-<footer class:list={['links', 'muted', { rule }]}>
+<footer class:list={['footer', 'muted', { rule }]}>
   {
-    links.map((link) => (
-      <a
-        href={link.href}
-        rel={link.href.startsWith('http') ? 'me noopener' : undefined}
-        target={link.href.startsWith('http') ? '_blank' : undefined}
-      >
-        {link.label}
-      </a>
-    ))
+    showLinks && (
+      <nav class="links" aria-label="Elsewhere">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            rel={link.href.startsWith('http') ? 'me noopener' : undefined}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    )
   }
+  <span class="toggle">
+    <ThemeToggle />
+  </span>
 </footer>
 
 <style>
-  .links {
+  .footer {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: baseline;
     gap: 12px 20px;
     font-size: 13px;
     padding-top: 4px;
   }
 
-  .links.rule {
+  .toggle {
+    margin-left: auto;
+  }
+
+  .footer.rule {
     padding-top: 24px;
     border-top: 1px solid var(--line);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 20px;
   }
 
   .links a {

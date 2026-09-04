@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import profile from '../assets/profile.png';
 import { site, nav } from '../site';
-import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   variant?: 'home' | 'page';
@@ -47,7 +46,6 @@ const path = Astro.url.pathname;
         </a>
       ))
     }
-    <ThemeToggle />
   </nav>
 </header>
 
