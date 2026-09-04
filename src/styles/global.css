@@ -1,0 +1,129 @@
+/* Editor palette from the design canvas. Light is the base; dark follows the
+   OS unless the visitor picks a theme, which is stored as data-theme. */
+:root {
+  --bg: #fbfbfb;
+  --fg: #4a4f58;
+  --muted: #8a919c;
+  --line: #e6e8eb;
+  --accent: #3b6fd6;
+  --str: #3f8f4a;
+  --kw: #9b4fb5;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #22262e;
+    --fg: #bcc4ce;
+    --muted: #7a8391;
+    --line: #353b47;
+    --accent: #6fb0f5;
+    --str: #9dc77a;
+    --kw: #c48bdc;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #22262e;
+  --fg: #bcc4ce;
+  --muted: #7a8391;
+  --line: #353b47;
+  --accent: #6fb0f5;
+  --str: #9dc77a;
+  --kw: #c48bdc;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: opacity 120ms ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 96px 32px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 56px 24px 56px;
+    gap: 36px;
+  }
+}

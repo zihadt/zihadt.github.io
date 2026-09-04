@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site';
+---
+
+<Base>
+  <div class="bio">
+    <p>
+      Hello, World! I’m a software engineer who loves tinkering with tech. Whether it’s writing
+      silly little Python scripts to add some spice to my daily tasks or fooling around with the
+      latest GPT model fresh out of the never-ending AI landscape, I’m always in for experimenting
+      with new tools. You could say I’m a jack of all trades, master of some!
+    </p>
+    <p>
+      Right now, I’m focused on developing AI tools and optimizing cloud infrastructure at{' '}
+      <a class="accent" href={site.employer.url} rel="noopener" target="_blank">{site.employer.name}</a>
+    </p>
+    <p>
+      Before this, I was part of a collaboration between the Department of Biomedical Physics &
+      Technology at Dhaka University and Bibeat Ltd., where we worked on affordable healthcare
+      solutions for low- and middle-income countries. I led the software development for homegrown
+      medical devices and helped create a telemedicine platform that’s been recognized
+      internationally.
+    </p>
+    <p>
+      When I’m not coding, I’m usually exploring the latest in AI or cloud tech, or playing peekaboo
+      with my pet birds, Totoro & Momo.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .bio {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-wrap: pretty;
+  }
+
+  .accent {
+    text-decoration-color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .bio {
+      gap: 16px;
+    }
+  }
+</style>

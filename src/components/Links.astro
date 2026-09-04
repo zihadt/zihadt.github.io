@@ -1,0 +1,32 @@
+---
+import { links } from '../site';
+---
+
+<footer class="links muted">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        rel={link.href.startsWith('http') ? 'me noopener' : undefined}
+        target={link.href.startsWith('http') ? '_blank' : undefined}
+      >
+        {link.label}
+      </a>
+    ))
+  }
+</footer>
+
+<style>
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    font-size: 13px;
+    padding-top: 4px;
+  }
+
+  .links a {
+    text-decoration: none;
+  }
+</style>
