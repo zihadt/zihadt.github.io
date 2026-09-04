@@ -3,15 +3,10 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
-const intro =
-  'Software I built for medical devices and healthcare delivery during my time at the Department of Biomedical Physics & Technology, University of Dhaka.';
 ---
 
-<Base title="Projects" description={intro}>
-  <div class="intro">
-    <h1>Projects</h1>
-    <p class="muted">{intro}</p>
-  </div>
+<Base title="Projects" description="Software projects by Zihad Tarafdar.">
+  <h1>Projects</h1>
   <ul class="list" role="list">
     {
       projects.map((project) => (
@@ -28,19 +23,8 @@ const intro =
 </Base>
 
 <style>
-  .intro {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   h1 {
     font-size: 28px;
-  }
-
-  .intro p {
-    font-size: 15px;
-    text-wrap: pretty;
   }
 
   .list {
@@ -83,7 +67,6 @@ const intro =
       font-size: 24px;
     }
 
-    .intro p,
     .summary {
       font-size: 14px;
     }
