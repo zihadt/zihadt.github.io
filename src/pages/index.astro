@@ -1,13 +1,19 @@
 ---
+import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Lightbox from '../components/Lightbox.astro';
 import { site } from '../site';
+import birds from '../assets/totoro-momo.jpeg';
+
+const birdsFull = await getImage({ src: birds, width: 1086, format: 'webp' });
 ---
 
 <Base variant="home">
   <div class="bio">
     <p>
       Hello, World! I’m a mechanical engineer by degree, biomedical engineer by PhD, and these days
-      mostly AI and cloud-native by trade. Honestly, the lines between them keep getting thinner.
+      mostly AI and cloud-native by trade. Honestly, the lines between them keep getting thinner,
+      and I like it that way :-)
     </p>
     <p>
       In a nutshell, I like tinkering with tech: from streaming a heartbeat off a digital
@@ -28,12 +34,15 @@ import { site } from '../site';
       been recognised internationally.
     </p>
     <p>
-      When I’m not coding, I’m usually reading, tech blogs by day and paperbacks by night, planning trips
-      with a roughly fifty percent departure rate, or playing peekaboo with my pet birds, Totoro
-      and Momo.
+      When I’m not coding, I’m usually reading, tech blogs by day and paperbacks by night, planning
+      trips with a roughly twenty-five percent departure rate, or playing peekaboo with my pet
+      birds,{' '}
+      <a class="accent" href={birdsFull.src} data-lightbox data-alt="Totoro and Momo">Totoro and Momo</a>.
     </p>
   </div>
 </Base>
+
+<Lightbox />
 
 <style>
   .bio {
