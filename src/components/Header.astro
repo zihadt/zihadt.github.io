@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+import profile from '../assets/profile.png';
+import { site, nav } from '../site';
+import ThemeToggle from './ThemeToggle.astro';
+
+const path = Astro.url.pathname;
+---
+
+<header class="header">
+  <a class="identity" href="/">
+    <Image
+      src={profile}
+      alt=""
+      width={144}
+      height={144}
+      densities={[1, 2]}
+      class="avatar"
+      loading="eager"
+    />
+    <span class="who">
+      <span class="name">{site.name}</span>
+      <span class="role muted"><span aria-hidden="true">//</span><span>{site.role}</span></span>
+    </span>
+  </a>
+  <nav class="nav muted" aria-label="Site">
+    {
+      nav.map((item) => (
+        <a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .identity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+  }
+
+  .identity:hover {
+    opacity: 1;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    flex: none;
+  }
+
+  .who {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .name {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .role {
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    flex: none;
+  }
+
+  .nav a {
+    text-decoration: none;
+  }
+
+  .nav a[aria-current='page'] {
+    color: var(--fg);
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+    }
+
+    .name {
+      font-size: 22px;
+    }
+
+    .role {
+      font-size: 12px;
+    }
+
+    .nav {
+      flex-wrap: wrap;
+    }
+  }
+</style>

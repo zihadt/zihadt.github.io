@@ -1,0 +1,68 @@
+---
+// Shows the theme the visitor would switch to. Text stays in the mono chrome.
+---
+
+<button class="theme-toggle" type="button" aria-label="Switch theme" data-theme-toggle>
+  <span data-when="light">dark</span><span data-when="dark">light</span>
+</button>
+
+<style>
+  .theme-toggle {
+    color: var(--muted);
+  }
+
+  .theme-toggle::before {
+    content: '[';
+  }
+
+  .theme-toggle::after {
+    content: ']';
+  }
+
+  .theme-toggle:hover {
+    opacity: 0.7;
+  }
+
+  [data-when='dark'] {
+    display: none;
+  }
+
+  :global(:root[data-theme='dark']) [data-when='light'] {
+    display: none;
+  }
+
+  :global(:root[data-theme='dark']) [data-when='dark'] {
+    display: inline;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) [data-when='light'] {
+      display: none;
+    }
+
+    :global(:root:not([data-theme='light'])) [data-when='dark'] {
+      display: inline;
+    }
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function current(): 'light' | 'dark' {
+    const set = root.dataset.theme;
+    if (set === 'light' || set === 'dark') return set;
+    return media.matches ? 'dark' : 'light';
+  }
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const next = current() === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {}
+    });
+  });
+</script>
