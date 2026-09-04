@@ -125,6 +125,12 @@
     const count = dialog.querySelector('[data-count]')!;
     let index = 0;
 
+    // A single image has nothing to page through.
+    if (links.length === 1) {
+      dialog.querySelectorAll('.arrow').forEach((el) => ((el as HTMLElement).hidden = true));
+      (count as HTMLElement).hidden = true;
+    }
+
     function show(i: number) {
       index = (i + links.length) % links.length;
       const link = links[index]!;
