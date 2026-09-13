@@ -1,3 +1,8 @@
+// GA4 Measurement ID, from Analytics → Admin → Data streams → web stream.
+// This is public by design — it ships in the HTML of every page — so it lives
+// in the repo rather than in a build secret. Only loaded in production builds.
+export const googleAnalyticsId = 'G-WFVPPX1K0E';
+
 export const site = {
   name: 'Zihad Tarafdar',
   role: 'jack of all trades, master of some',
