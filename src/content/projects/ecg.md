@@ -8,6 +8,11 @@ order: 2
 
 Bibeat Ltd. manufactures a 12-lead ECG designed at the Department of Biomedical Physics & Technology, University of Dhaka, as a low-cost alternative to imported machines. I wrote the software on both sides of the device: a C# controller that drives the hardware, and the clinical interface that doctors and operators use.
 
+<figure>
+  <img src="/projects/ecg/ecg-kit.jpg" alt="Computerised ECG unit by Bibeat with its carry bag, four colour-coded limb clamps, six chest suction electrodes, patient cable and USB cable" loading="lazy" style="width: 420px; max-width: 100%; margin: 0 auto;" />
+  <figcaption>The ECG kit: the device, limb clamps, chest electrodes, patient cable and a USB connection to the PC.</figcaption>
+</figure>
+
 **Device controller (C#, .NET)**
 
 - USB HID communication with the device, with hot-plug detection and automatic reconnection.
